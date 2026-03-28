@@ -1,0 +1,48 @@
+# 登录页面 YAML 定义
+
+elements:
+  # ========== 输入框 ==========
+  username_input:
+    locator_type: id
+    locator_value: txt_username
+    control_type: Edit
+    description: "用户名输入框"
+  
+  password_input:
+    locator_type: id
+    locator_value: txt_password
+    control_type: Edit
+    description: "密码输入框"
+  
+  # ========== 按钮 ==========
+  login_button:
+    locator_type: name
+    locator_value: 登录
+    control_type: Button
+    description: "登录按钮"
+  
+  register_link:
+    locator_type: id
+    locator_value: lnk_register
+    control_type: Hyperlink
+    description: "注册链接"
+  
+  # ========== 复选框 ==========
+  remember_checkbox:
+    locator_type: id
+    locator_value: chk_remember
+    control_type: CheckBox
+    description: "记住密码复选框"
+  
+  # ========== 标签 ==========
+  title_label:
+    locator_type: id
+    locator_value: lbl_title
+    control_type: Text
+    description: "页面标题"
+  
+  error_message:
+    locator_type: id
+    locator_value: lbl_error
+    control_type: Text
+    description: "错误提示文本"

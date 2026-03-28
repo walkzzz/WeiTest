@@ -1,0 +1,218 @@
+// AutoTestMe-NG Jenkins Pipeline
+// 用于 Windows UI 自动化测试
+
+pipeline {
+    agent {
+        label 'windows-agent'
+    }
+    
+    environment {
+        PYTHON_VERSION = '3.9'
+        PROJECT_NAME = 'AutoTestMe-NG'
+        REPORT_DIR = 'reports'
+        ALLURE_RESULTS = 'reports/allure-results'
+        LOG_DIR = 'logs'
+    }
+    
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '30'))
+        timeout(time: 60, unit: 'MINUTES')
+        disableConcurrentBuilds()
+        timestamps()
+    }
+    
+    parameters {
+        choice(
+            name: 'TEST_TYPE',
+            choices: ['all', 'smoke', 'regression', 'ui'],
+            description: '测试类型'
+        )
+        booleanParam(
+            name: 'GENERATE_REPORT',
+            defaultValue: true,
+            description: '生成测试报告'
+        )
+        booleanParam(
+            name: 'RUN_COVERAGE',
+            defaultValue: true,
+            description: '运行代码覆盖率'
+        )
+    }
+    
+    triggers {
+        // Git 推送触发
+        pollSCM('H/5 * * * *')
+        // 定时触发（工作日早上 8 点）
+        cron('0 8 * * 1-5')
+    }
+    
+    stages {
+        stage('📥 Checkout') {
+            steps {
+                script {
+                    echo "正在检出代码..."
+                    checkout scm
+                    env.GIT_COMMIT_SHORT = sh(
+                        script: 'git rev-parse --short HEAD',
+                        returnStdout: true
+                    ).trim()
+                    echo "当前提交：${env.GIT_COMMIT_SHORT}"
+                }
+            }
+        }
+        
+        stage('🛠️ Environment Setup') {
+            steps {
+                script {
+                    echo "准备测试环境..."
+                    sh '''
+                        mkdir -p ${REPORT_DIR}
+                        mkdir -p ${ALLURE_RESULTS}
+                        mkdir -p ${LOG_DIR}
+                    '''
+                    bat 'python --version'
+                }
+            }
+        }
+        
+        stage('📦 Install Dependencies') {
+            steps {
+                script {
+                    echo "安装项目依赖..."
+                    bat '''
+                        python -m pip install --upgrade pip
+                        pip install -r requirements.txt
+                    '''
+                }
+            }
+        }
+        
+        stage('🔍 Code Quality') {
+            parallel {
+                stage('Type Check') {
+                    steps {
+                        bat 'mypy core/ engine/ --ignore-missing-imports'
+                    }
+                }
+                stage('Lint Check') {
+                    steps {
+                        bat 'ruff check src/ framework/ tests/'
+                    }
+                }
+            }
+        }
+        
+        stage('🧪 Run Tests') {
+            parallel {
+                stage('Unit Tests') {
+                    steps {
+                        bat '''
+                            pytest tests/test_core/ -v 
+                                --alluredir=${ALLURE_RESULTS}/unit
+                                --html=${REPORT_DIR}/unit-report.html
+                                --tb=short
+                        '''
+                    }
+                }
+                
+                stage('UI Tests') {
+                    steps {
+                        script {
+                            def testMark = params.TEST_TYPE == 'smoke' ? 'smoke' : 'ui'
+                            bat """
+                                pytest framework/tests/ui/ -v 
+                                    --alluredir=${ALLURE_RESULTS}/ui
+                                    --html=${REPORT_DIR}/ui-report.html
+                                    --tb=short
+                            """
+                        }
+                    }
+                }
+            }
+        }
+        
+        stage('📊 Generate Reports') {
+            when {
+                expression { return params.GENERATE_REPORT }
+            }
+            steps {
+                script {
+                    echo "生成测试报告..."
+                    
+                    allure([
+                        includeProperties: false,
+                        jdk: '',
+                        properties: [],
+                        reportBuildPolicy: 'ALWAYS',
+                        results: [[path: "${ALLURE_RESULTS}"]]
+                    ])
+                }
+            }
+        }
+        
+        stage('📁 Archive Artifacts') {
+            steps {
+                script {
+                    archiveArtifacts(
+                        artifacts: '''
+                            ${REPORT_DIR}/*.html
+                            ${ALLURE_RESULTS}/**/*.json
+                            ${LOG_DIR}/**/*.log
+                        ''',
+                        allowEmptyArchive: true
+                    )
+                }
+            }
+        }
+    }
+    
+    post {
+        always {
+            script {
+                echo "清理工作空间..."
+                cleanWs()
+            }
+        }
+        
+        success {
+            script {
+                emailext(
+                    to: '${env.CHANGE_AUTHOR_EMAIL}',
+                    subject: "✅ [SUCCESS] ${env.PROJECT_NAME} - Build #${env.BUILD_NUMBER}",
+                    body: """
+                        <html>
+                        <body>
+                        <h2>✅ 构建成功</h2>
+                        <p>项目：${env.PROJECT_NAME}</p>
+                        <p>构建号：#${env.BUILD_NUMBER}</p>
+                        <p><a href="${env.BUILD_URL}">查看构建详情</a></p>
+                        <p><a href="${env.BUILD_URL}allure">查看 Allure 报告</a></p>
+                        </body>
+                        </html>
+                    """,
+                    mimeType: 'text/html'
+                )
+            }
+        }
+        
+        failure {
+            script {
+                emailext(
+                    to: '${env.CHANGE_AUTHOR_EMAIL}',
+                    subject: "❌ [FAILURE] ${env.PROJECT_NAME} - Build #${env.BUILD_NUMBER}",
+                    body: """
+                        <html>
+                        <body>
+                        <h2>❌ 构建失败</h2>
+                        <p>请查看构建日志</p>
+                        <p><a href="${env.BUILD_URL}console">查看控制台输出</a></p>
+                        </body>
+                        </html>
+                    """,
+                    mimeType: 'text/html',
+                    attachLog: true
+                )
+            }
+        }
+    }
+}

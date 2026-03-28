@@ -1,0 +1,1 @@
+"""AutoTestMe-NG Core Tests"""

@@ -1,0 +1,34 @@
+# requirements.txt
+# AutoTestMe-NG Core Dependencies
+
+# Core automation
+pywinauto>=0.6.8
+
+# Testing
+pytest>=7.4.0
+pytest-html>=4.0.0
+pytest-mock>=3.12.0
+
+# Type checking
+mypy>=1.0.0
+
+# Code quality
+ruff>=0.1.0
+black>=23.0.0
+
+# Advanced features (optional)
+pyautogui>=0.9.53        # 图像识别
+opencv-python>=4.7.0     # 图像处理
+pillow>=10.0.0           # 图像处理支持
+
+# Parallel execution
+pytest-xdist>=3.0.0      # 并行测试
+
+# Auto retry
+pytest-rerunfailures>=12.0.0  # 失败重试
+
+# Data generation (optional)
+faker>=18.0.0            # 动态数据生成
+
+# Encryption (for config)
+cryptography>=41.0.0     # 配置加密

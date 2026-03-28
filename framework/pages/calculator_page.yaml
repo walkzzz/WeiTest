@@ -1,0 +1,72 @@
+# 计算器页面 YAML 定义
+
+elements:
+  # 数字按钮
+  btn_0:
+    locator_type: name
+    locator_value: "0"
+    control_type: Button
+    description: "数字 0"
+  
+  btn_1:
+    locator_type: name
+    locator_value: "1"
+    control_type: Button
+    description: "数字 1"
+  
+  btn_2:
+    locator_type: name
+    locator_value: "2"
+    control_type: Button
+    description: "数字 2"
+  
+  btn_3:
+    locator_type: name
+    locator_value: "3"
+    control_type: Button
+    description: "数字 3"
+  
+  # 运算符
+  btn_add:
+    locator_type: name
+    locator_value: "+"
+    control_type: Button
+    description: "加法"
+  
+  btn_subtract:
+    locator_type: name
+    locator_value: "-"
+    control_type: Button
+    description: "减法"
+  
+  btn_multiply:
+    locator_type: name
+    locator_value: "*"
+    control_type: Button
+    description: "乘法"
+  
+  btn_divide:
+    locator_type: name
+    locator_value: "/"
+    control_type: Button
+    description: "除法"
+  
+  # 功能按钮
+  btn_equals:
+    locator_type: name
+    locator_value: "="
+    control_type: Button
+    description: "等于"
+  
+  btn_clear:
+    locator_type: name
+    locator_value: "C"
+    control_type: Button
+    description: "清除"
+  
+  # 显示区域
+  display:
+    locator_type: class_name
+    locator_value: "Static"
+    control_type: Text
+    description: "显示区域"

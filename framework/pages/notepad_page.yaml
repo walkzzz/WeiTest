@@ -1,0 +1,60 @@
+# 记事本页面 YAML 定义
+
+elements:
+  # 编辑区域
+  edit_area:
+    locator_type: class_name
+    locator_value: Edit
+    control_type: Edit
+    description: "编辑区域"
+  
+  # 菜单栏
+  menu_file:
+    locator_type: name
+    locator_value: 文件
+    control_type: MenuItem
+    description: "文件菜单"
+  
+  menu_edit:
+    locator_type: name
+    locator_value: 编辑
+    control_type: MenuItem
+    description: "编辑菜单"
+  
+  menu_format:
+    locator_type: name
+    locator_value: 格式
+    control_type: MenuItem
+    description: "格式菜单"
+  
+  # 状态栏
+  status_bar:
+    locator_type: class_name
+    locator_value: msctls_statusbar32
+    control_type: StatusBar
+    description: "状态栏"
+  
+  # 文件菜单项
+  menu_new:
+    locator_type: name
+    locator_value: 新建
+    control_type: MenuItem
+    description: "新建"
+  
+  menu_open:
+    locator_type: name
+    locator_value: 打开...
+    control_type: MenuItem
+    description: "打开"
+  
+  menu_save:
+    locator_type: name
+    locator_value: 保存
+    control_type: MenuItem
+    description: "保存"
+  
+  menu_exit:
+    locator_type: name
+    locator_value: 退出
+    control_type: MenuItem
+    description: "退出"

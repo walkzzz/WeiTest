@@ -1,0 +1,45 @@
+# 基础页面元素定义
+# 所有页面都可以继承这些通用元素
+
+elements:
+  # 通用菜单项
+  menu_bar:
+    locator_type: automation_id
+    locator_value: menu_bar
+    control_type: Menu
+    description: "菜单栏"
+    component: menu
+  
+  # 通用按钮样式
+  base_button:
+    locator_type: class_name
+    locator_value: Button
+    control_type: Button
+    description: "基础按钮"
+    component: button
+  
+  # 通用输入框样式  
+  base_input:
+    locator_type: class_name
+    locator_value: Edit
+    control_type: Edit
+    description: "基础输入框"
+    component: input
+    wait_condition: visible
+  
+  # 通用标签样式
+  base_label:
+    locator_type: class_name
+    locator_value: Text
+    control_type: Text
+    description: "基础标签"
+    component: label
+  
+  # 通用复选框样式
+  base_checkbox:
+    locator_type: class_name
+    locator_value: Button
+    control_type: CheckBox
+    description: "基础复选框"
+    component: checkbox
+    wait_condition: visible
