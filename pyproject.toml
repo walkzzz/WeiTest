@@ -40,6 +40,9 @@ select = ["E", "W", "F", "I", "N", "PYI"]
 line-length = 100
 target-version = ["py39"]
 
+[project.scripts]
+atm = "cli.__main__:main"
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 python_files = "test_*.py"
