@@ -1,4 +1,4 @@
-# AutoTestMe-NG
+# WeiTest - 微测试
 
 下一代 Windows UI 自动化测试框架
 
@@ -7,7 +7,7 @@
 ### 1. 安装依赖
 
 ```bash
-pip install -r requirements.txt
+pip install wei-test
 ```
 
 ### 2. 定义页面 (YAML)
@@ -34,10 +34,10 @@ elements:
 创建 `tests/test_login.py`:
 
 ```python
-from engine.page.yaml_page import YamlPage
-from engine.component.button import Button
-from engine.component.input import TextInput
-from engine.assertion import Assert
+from wei.engine.page.yaml_page import YamlPage
+from wei.engine.component.button import Button
+from wei.engine.component.input import TextInput
+from wei.engine.assertion import Assert
 
 def test_login():
     page = YamlPage.from_yaml("framework/pages/login_page.yaml")
@@ -67,7 +67,7 @@ pytest tests/test_login.py -v
 ## 项目结构
 
 ```
-autotestme-ng/
+weitest/
 ├── core/              # Core Layer - pywinauto 封装
 ├── engine/            # Engine Layer - PageObject/组件/断言
 ├── infra/             # Infra Layer - 配置/日志/报告
@@ -100,7 +100,7 @@ autotestme-ng/
 ### 使用组件
 
 ```python
-from engine.component import Button, TextInput, CheckBox
+from wei.engine.component import Button, TextInput, CheckBox
 
 # 按钮
 btn = Button(page, ByID("btn_login"))
@@ -118,7 +118,7 @@ chk.check()
 ### 使用断言
 
 ```python
-from engine.assertion import Assert
+from wei.engine.assertion import Assert
 
 # UI 断言
 Assert.ui(page, ByID("btn_login")).should_be_visible()
@@ -132,7 +132,7 @@ Assert.ui(page, ByID("btn_login")).should_be_visible()
 ### 使用配置
 
 ```python
-from infra.config import ConfigManager
+from wei.infra.config import ConfigManager
 
 config = ConfigManager("framework/data")
 env = config.get_env_config("test")
@@ -142,7 +142,7 @@ print(env["app_path"])
 ### 使用日志
 
 ```python
-from infra.logging import Logger, get_logger
+from wei.infra.logging import Logger, get_logger
 
 logger = Logger("MyTest")
 logger.info("测试开始")
@@ -152,7 +152,7 @@ logger.error("发生错误")
 ### 使用报告
 
 ```python
-from infra.reporting import ReportManager
+from wei.infra.reporting import ReportManager
 
 reporter = ReportManager()
 reporter.create_allure_report()

@@ -4,8 +4,8 @@ from typing import Optional, List, TYPE_CHECKING
 
 if TYPE_CHECKING:
     from pywinauto.controls.uia_wrapper import UIAWrapper
-    from core.finder.locator import Locator
-    from core.finder.search_engine import SearchEngine
+    from wei.core.finder.locator import Locator
+    from wei.core.finder.search_engine import SearchEngine
 
 
 class WindowDriver:
@@ -63,7 +63,7 @@ class WindowDriver:
         Returns:
             ElementWrapper 实例
         """
-        from core.finder.search_engine import SearchEngine
+        from wei.core.finder.search_engine import SearchEngine
 
         search_engine = SearchEngine(self)
         return search_engine.find(locator)
@@ -78,7 +78,7 @@ class WindowDriver:
         Returns:
             ElementWrapper 列表
         """
-        from core.finder.search_engine import SearchEngine
+        from wei.core.finder.search_engine import SearchEngine
 
         search_engine = SearchEngine(self)
         return search_engine.find_all(locator)

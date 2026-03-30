@@ -2,7 +2,7 @@
 
 import pytest
 from unittest.mock import Mock
-from engine.component.input import TextInput
+from wei.engine.component.input import TextInput
 
 
 class TestTextInput:
@@ -25,7 +25,7 @@ class TestTextInput:
 
     def test_input_init(self, mock_page):
         """测试输入框初始化"""
-        from core.finder.locator import ByID
+        from wei.core.finder.locator import ByID
 
         locator = ByID("txt_test")
         input_box = TextInput(mock_page, locator)
@@ -37,7 +37,7 @@ class TestTextInput:
         """测试输入文本"""
         mock_page.find_element.return_value = mock_element
 
-        from core.finder.locator import ByID
+        from wei.core.finder.locator import ByID
 
         input_box = TextInput(mock_page, ByID("txt_test"))
         result = input_box.type("测试内容")
@@ -49,7 +49,7 @@ class TestTextInput:
         """测试清空输入框"""
         mock_page.find_element.return_value = mock_element
 
-        from core.finder.locator import ByID
+        from wei.core.finder.locator import ByID
 
         input_box = TextInput(mock_page, ByID("txt_test"))
         result = input_box.clear()
@@ -63,7 +63,7 @@ class TestTextInput:
         """测试设置值"""
         mock_page.find_element.return_value = mock_element
 
-        from core.finder.locator import ByID
+        from wei.core.finder.locator import ByID
 
         input_box = TextInput(mock_page, ByID("txt_test"))
         result = input_box.set_value("新值")
@@ -74,7 +74,7 @@ class TestTextInput:
         """测试获取值"""
         mock_page.find_element.return_value = mock_element
 
-        from core.finder.locator import ByID
+        from wei.core.finder.locator import ByID
 
         input_box = TextInput(mock_page, ByID("txt_test"))
 
@@ -85,7 +85,7 @@ class TestTextInput:
         """测试可编辑属性"""
         mock_page.find_element.return_value = mock_element
 
-        from core.finder.locator import ByID
+        from wei.core.finder.locator import ByID
 
         input_box = TextInput(mock_page, ByID("txt_test"))
 

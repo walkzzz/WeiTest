@@ -74,7 +74,7 @@ class TestAssertionIntegration:
 
     def test_assertion_chain(self):
         """测试断言链"""
-        from engine.assertion import Assert
+        from wei.engine.assertion import Assert
 
         # 基本断言链
         result = (
@@ -88,7 +88,7 @@ class TestAssertionIntegration:
 
     def test_ui_assertion_with_mock(self):
         """测试 UI 断言（模拟）"""
-        from engine.assertion import Assert
+        from wei.engine.assertion import Assert
         from unittest.mock import Mock
 
         mock_page = Mock()

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""AutoTestMe-NG Command Line Interface"""
+"""WeiTest - 微测试命令行工具"""
 
 import argparse
 import sys
@@ -9,19 +9,19 @@ from pathlib import Path
 def main():
     """CLI 主入口"""
     parser = argparse.ArgumentParser(
-        prog="atm",
-        description="AutoTestMe-NG 命令行工具",
+        prog="wei",
+        description="微测试 - Windows UI 自动化测试框架",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 使用示例:
-  atm init myproject        创建新的测试项目
-  atm create page login     创建登录页面对象
-  atm run tests/            运行测试
-  atm report                生成测试报告
+  wei init myproject        创建新的测试项目
+  wei create page login     创建登录页面对象
+  wei run tests/            运行测试
+  wei report                生成测试报告
         """,
     )
 
-    parser.add_argument("-v", "--version", action="version", version="%(prog)s 0.1.0")
+    parser.add_argument("-v", "--version", action="version", version="%(prog)s 2.0.1")
 
     subparsers = parser.add_subparsers(dest="command", help="可用命令")
 
@@ -151,7 +151,7 @@ def cmd_create_page(args):
     py_file = pages_dir / f"{page_name}_page.py"
     py_content = f'''"""{page_name} 页面对象"""
 
-from engine.page.base_page import BasePage
+from wei.engine.page.base_page import BasePage
 
 
 class {page_name.capitalize()}Page(BasePage):

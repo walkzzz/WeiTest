@@ -107,12 +107,12 @@ class PageCodeGenerator:
 
         # 导入语句
         lines.append("from typing import TYPE_CHECKING")
-        lines.append("from engine.page.yaml_page import YamlPage")
-        lines.append("from engine.component import *")
+        lines.append("from wei.engine.page.yaml_page import YamlPage")
+        lines.append("from wei.engine.component import *")
         lines.append("from core.finder.locator import *")
         lines.append("")
         lines.append("if TYPE_CHECKING:")
-        lines.append("    from engine.page.base_page import BasePage")
+        lines.append("    from wei.engine.page.base_page import BasePage")
         lines.append("")
 
         # 类定义

@@ -3,7 +3,7 @@
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from core.finder.locator import Locator
+    from wei.core.finder.locator import Locator
     from engine.page.base_page import BasePage
 
 

@@ -2,8 +2,8 @@
 
 from typing import Optional, Union
 from core.finder.locator import Locator
-from engine.locators.image_locator import ImageLocator
-from engine.locators.coord_locator import CoordLocator
+from wei.engine.locators.image_locator import ImageLocator
+from wei.engine.locators.coord_locator import CoordLocator
 
 
 class AdvancedActionMixin:

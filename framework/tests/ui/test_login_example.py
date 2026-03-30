@@ -1,13 +1,13 @@
 """Engine Layer Integration Test Example"""
 
 import pytest
-from engine.page.yaml_page import YamlPage
-from engine.component.button import Button
-from engine.component.input import TextInput
-from engine.component.checkbox import CheckBox
-from engine.component.label import Label
-from engine.assertion import Assert
-from core.finder.locator import ByID, ByName
+from wei.engine.page.yaml_page import YamlPage
+from wei.engine.component.button import Button
+from wei.engine.component.input import TextInput
+from wei.engine.component.checkbox import CheckBox
+from wei.engine.component.label import Label
+from wei.engine.assertion import Assert
+from wei.core.finder.locator import ByID, ByName
 
 
 class TestLoginIntegration:

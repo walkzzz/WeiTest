@@ -3,11 +3,22 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "autotestme-ng"
-version = "0.1.0"
-description = "Next Generation Windows UI Automation Testing Framework"
+name = "wei-test"
+version = "2.0.1"
+description = "微测试 - 下一代 Windows UI 自动化测试框架"
 readme = "README.md"
 requires-python = ">=3.9"
+keywords = ["test", "automation", "ui", "windows", "pywinauto", "wei"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Software Development :: Testing",
+]
 dependencies = [
     "pywinauto>=0.6.8",
     "pytest>=7.4.0",
@@ -21,6 +32,11 @@ dev = [
     "black>=23.0.0",
     "pytest-cov>=4.0.0",
 ]
+
+[project.urls]
+Homepage = "https://wei-test.dev"
+Documentation = "https://docs.wei-test.dev"
+Repository = "https://github.com/wei-test/wei-test"
 
 [tool.mypy]
 python_version = 3.9
@@ -41,7 +57,7 @@ line-length = 100
 target-version = ["py39"]
 
 [project.scripts]
-atm = "cli.__main__:main"
+wei = "cli.__main__:main"
 
 [tool.setuptools.packages.find]
 include = ["core*", "engine*", "infra*", "cli*"]

@@ -3,11 +3,11 @@
 import pytest
 from unittest.mock import Mock, MagicMock, patch
 
-from engine.page.yaml_page import YamlPage
-from engine.component.button import Button
-from engine.component.input import TextInput
-from engine.component.checkbox import CheckBox
-from engine.assertion import Assert
+from wei.engine.page.yaml_page import YamlPage
+from wei.engine.component.button import Button
+from wei.engine.component.input import TextInput
+from wei.engine.component.checkbox import CheckBox
+from wei.engine.assertion import Assert
 
 
 @pytest.fixture
@@ -175,7 +175,7 @@ elements:
         assert page.has_element("tab_settings")
 
         # 创建工作流
-        from engine.component.tab_control import TabControl
+        from wei.engine.component.tab_control import TabControl
 
         tab_control = TabControl(page, page.element("tab_home"))
         assert tab_control is not None
