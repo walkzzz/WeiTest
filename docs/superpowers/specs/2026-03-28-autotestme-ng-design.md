@@ -1,10 +1,10 @@
-# AutoTestMe-NG 框架设计文档
+# WeiTest 框架设计文档
 
 **文档版本**: v1.0  
 **创建日期**: 2026-03-28  
 **作者**: AI Agent  
 **状态**: 已批准  
-**项目名称**: AutoTestMe-NG (Next Generation)
+**项目名称**: WeiTest (Next Generation)
 
 ---
 
@@ -26,7 +26,7 @@
 
 ### 1.1 项目背景
 
-AutoTestMe-NG 是 AutoTestMe 框架的下一代版本，采用**激进式重构**策略重新设计，旨在解决原框架的架构问题，提供清晰的分层、模块化设计和企业级 CI/CD 集成。
+WeiTest 是 AutoTestMe 框架的下一代版本，采用**激进式重构**策略重新设计，旨在解决原框架的架构问题，提供清晰的分层、模块化设计和企业级 CI/CD 集成。
 
 ### 1.2 设计目标
 

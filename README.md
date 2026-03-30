@@ -67,12 +67,14 @@ pytest tests/test_login.py -v
 ## 项目结构
 
 ```
-weitest/
+WeiTest/
 ├── core/              # Core Layer - pywinauto 封装
 ├── engine/            # Engine Layer - PageObject/组件/断言
 ├── infra/             # Infra Layer - 配置/日志/报告
 ├── framework/         # Framework Layer - 业务页面和测试
-└── tests/             # 框架自测
+├── cli/               # CLI 工具
+├── tests/             # 框架自测
+└── docs/              # 文档
 ```
 
 ## 核心功能

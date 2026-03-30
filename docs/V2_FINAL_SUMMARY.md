@@ -1,4 +1,4 @@
-# AutoTestMe-NG v2.0 改进完成总结
+# WeiTest v2.0 改进完成总结
 
 **完成日期**: 2026-03-28  
 **版本**: v1.0 → v2.0  
@@ -338,7 +338,7 @@ pytest -n auto --reruns 3 --reruns-delay 2 --timeout 300 \
 ```bash
 # 提交所有改进
 git add -A
-git commit -m "feat(v2.0): 完成 AutoTestMe-NG v2.0 全部改进
+git commit -m "feat(v2.0): 完成 WeiTest v2.0 全部改进
 
 Phase 7-9 新增:
 - 高级断言系统 (ImageAssertion/PropertyAssertion/CustomAssertion)
@@ -362,8 +362,8 @@ Phase 7-9 新增:
 - 总体提升：+300%"
 
 # 创建版本标签
-git tag -a v2.0.0 -m "AutoTestMe-NG v2.0.0 - Complete Release"
-git tag -a v2.0.0-rc1 -m "AutoTestMe-NG v2.0.0 Release Candidate 1"
+git tag -a v2.0.0 -m "WeiTest v2.0.0 - Complete Release"
+git tag -a v2.0.0-rc1 -m "WeiTest v2.0.0 Release Candidate 1"
 
 # 推送标签
 git push origin --tags
@@ -412,7 +412,7 @@ git push origin --tags
 
 ## 🏁 结语
 
-**AutoTestMe-NG v2.0 改进全部完成!**
+**WeiTest v2.0 改进全部完成!**
 
 通过 10 个 Phase 的系统性改进，框架实现了:
 - ✅ 代码质量从 ⭐⭐⭐ 提升到 ⭐⭐⭐⭐⭐
@@ -421,7 +421,7 @@ git push origin --tags
 - ✅ 总体评分从 3.5 提升到 4.8
 
 新增 ~5,500 行高质量代码，25 个新文件，4 个 UI 组件，完整的插件系统，
-使 AutoTestMe-NG 成为一个企业级的 UI 自动化测试框架！
+使 WeiTest 成为一个企业级的 UI 自动化测试框架！
 
 **下一步**:
 1. 执行 Phase 11: Git 历史整理
@@ -431,4 +431,4 @@ git push origin --tags
 
 ---
 
-**🎉 AutoTestMe-NG v2.0 开发完成!**
+**🎉 WeiTest v2.0 开发完成!**

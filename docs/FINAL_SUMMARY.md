@@ -139,7 +139,7 @@
 ## 📁 完整项目结构
 
 ```
-autotestme-ng/
+WeiTest/
 ├── core/                          # Core Layer (1,954 行)
 │   ├── driver/                    # Application/Window/Backend
 │   ├── finder/                    # Locator/SearchEngine/Strategies
@@ -299,11 +299,11 @@ autotestme-ng/
 
 ## 📞 联系与支持
 
-**项目位置**: `D:\Work\Trae\autotestme-ng`
+**项目位置**: `D:\Work\Trae\WeiTest`
 
 **快速开始**:
 ```bash
-cd D:\Work\Trae\autotestme-ng
+cd D:\Work\Trae\WeiTest
 
 # 健康检查
 python health_check.py

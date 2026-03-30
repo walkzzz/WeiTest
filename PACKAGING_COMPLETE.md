@@ -1,4 +1,4 @@
-# AutoTestMe-NG v2.0 打包完成报告
+# WeiTest v2.0 打包完成报告
 
 **完成日期**: 2026-03-28  
 **打包位置**: E:\Huaweiutotestme-ng-v2.0  
@@ -13,15 +13,15 @@
 
 **版本标签**:
 ```
-v2.0.0 - AutoTestMe-NG v2.0.0 Complete Release
+v2.0.0 - WeiTest v2.0.0 Complete Release
 ```
 
 **提交历史**:
 ```bash
 commit 8b53f1c33468e92de54e3efb40fd91f020e578b4 (HEAD -> master, tag: v2.0.0)
-Author: AutoTestMe-NG Team <team@autotestme.ng>
+Author: WeiTest Team <team@autotestme.ng>
 Date:   Sat Mar 28 17:58:16 2026 +0800
-    feat(v2.0): AutoTestMe-NG v2.0 Complete Release
+    feat(v2.0): WeiTest v2.0 Complete Release
 ```
 
 **文件统计**:
@@ -115,7 +115,7 @@ pytest -n auto --reruns 2 -v
 
 ## 🎉 总结
 
-**AutoTestMe-NG v2.0.0** 已成功打包到 `E:\Huaweiutotestme-ng-v2.0`，包含:
+**WeiTest v2.0.0** 已成功打包到 `E:\Huaweiutotestme-ng-v2.0`，包含:
 
 - ✅ 完整的 Git 仓库
 - ✅ v2.0.0 版本标签

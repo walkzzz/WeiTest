@@ -8,7 +8,7 @@
 
 **Tech Stack:** Python 3.9+, pywinauto 0.6.8+, pytest 7.4.0+, mypy 1.0.0+
 
-**Spec Reference:** `docs/superpowers/specs/2026-03-28-autotestme-ng-design.md`
+**Spec Reference:** `docs/superpowers/specs/2026-03-28-WeiTest-design.md`
 
 ---
 
@@ -98,7 +98,7 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "autotestme-ng"
+name = "WeiTest"
 version = "0.1.0"
 description = "Next Generation Windows UI Automation Testing Framework"
 requires-python = ">=3.9"
@@ -1029,7 +1029,7 @@ git commit -m "feat(core/driver): implement BackendManager
 
 ---
 
-**Plan complete and saved to `docs/superpowers/plans/2026-03-28-autotestme-ng-core-layer.md`. Two execution options:**
+**Plan complete and saved to `docs/superpowers/plans/2026-03-28-WeiTest-core-layer.md`. Two execution options:**
 
 **1. Subagent-Driven (recommended)** - I dispatch a fresh subagent per task, review between tasks, fast iteration
 

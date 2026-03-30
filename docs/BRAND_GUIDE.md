@@ -379,7 +379,7 @@ vs 竞品:
 
 ```
 v2.0.1 (2026-03-30):
-  - 从 AutoTestMe-NG 迁移到 WeiTest
+  - 从 WeiTest 迁移到 WeiTest
   - 全新品牌形象
   - 完整文档体系
 ```

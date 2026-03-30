@@ -1,4 +1,4 @@
-# AutoTestMe-NG v2.0.0 发布说明
+# WeiTest v2.0.0 发布说明
 
 **发布日期**: 2026-03-28  
 **版本**: v2.0.0  
@@ -146,10 +146,10 @@ git log --oneline
 **提交信息**:
 ```
 commit 8b53f1c33468e92de54e3efb40fd91f020e578b4 (tag: v2.0.0)
-Author: AutoTestMe-NG Team <team@autotestme.ng>
+Author: WeiTest Team <team@autotestme.ng>
 Date:   Sat Mar 28 17:58:16 2026 +0800
 
-    feat(v2.0): AutoTestMe-NG v2.0 Complete Release
+    feat(v2.0): WeiTest v2.0 Complete Release
     
     11 Phases completed:
     - Code Quality, Advanced Features, YAML Enhancement
@@ -215,7 +215,7 @@ set ATM_ENVIRONMENT=prod
 
 ## 🎉 总结
 
-**AutoTestMe-NG v2.0.0** 是一个重大更新版本，通过 11 个 Phase 的系统性改进，
+**WeiTest v2.0.0** 是一个重大更新版本，通过 11 个 Phase 的系统性改进，
 实现了从代码质量、功能完整性、可扩展性到性能的全方位提升。
 
 - ✅ **14 个 UI 组件** - 完整覆盖常用控件
@@ -229,6 +229,6 @@ set ATM_ENVIRONMENT=prod
 
 ---
 
-**发布团队**: AutoTestMe-NG Team  
+**发布团队**: WeiTest Team  
 **联系方式**: team@autotestme.ng  
 **发布日期**: 2026-03-28

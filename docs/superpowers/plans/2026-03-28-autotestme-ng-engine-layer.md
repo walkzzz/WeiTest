@@ -1,14 +1,14 @@
-# AutoTestMe-NG Engine Layer Implementation Plan
+# WeiTest Engine Layer Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development to implement this plan task-by-task.
 
-**Goal:** 实现 AutoTestMe-NG 框架的引擎层（Engine Layer），包括 Page 模块（Mixin 架构）、Component 组件库和 Assertion 断言引擎。
+**Goal:** 实现 WeiTest 框架的引擎层（Engine Layer），包括 Page 模块（Mixin 架构）、Component 组件库和 Assertion 断言引擎。
 
 **Architecture:** Engine 层构建在 Core 层之上，提供 PageObject 模式实现、可复用的 UI 组件和流畅的断言 API。采用 Mixin 组合模式，避免深继承链。
 
 **Tech Stack:** Python 3.9+, pywinauto 0.6.8+, pytest 7.4.0+
 
-**Spec Reference:** `docs/superpowers/specs/2026-03-28-autotestme-ng-design.md` Section 4
+**Spec Reference:** `docs/superpowers/specs/2026-03-28-WeiTest-design.md` Section 4
 
 **Prerequisites:** Core Layer 已完成（ApplicationDriver, WindowDriver, Locator, SearchEngine, SmartWait）
 

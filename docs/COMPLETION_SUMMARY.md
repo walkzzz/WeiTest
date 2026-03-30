@@ -1,4 +1,4 @@
-# AutoTestMe-NG 项目开发完成总结
+# WeiTest 项目开发完成总结
 
 ## 📊 最终统计
 
@@ -29,7 +29,7 @@
 # 记事本测试示例
 def test_edit_area(self, notepad_page):
     edit = TextInput(notepad_page, notepad_page.element("edit_area"))
-    test_text = "Hello, AutoTestMe-NG!"
+    test_text = "Hello, WeiTest!"
     edit.type(test_text)
     assert test_text in edit.value
 ```
@@ -208,7 +208,7 @@ a4c6b11 - feat(core/finder): implement Finder module
 16c4678 - feat(core/driver): implement Driver module
 cc7b6d3 - feat(core): initialize core layer with exception hierarchy
 3ccab3b - docs: 添加 Core Layer 实施计划
-6f7a75b - docs: 添加 AutoTestMe-NG 框架设计文档
+6f7a75b - docs: 添加 WeiTest 框架设计文档
 ```
 
 ---
@@ -273,7 +273,7 @@ cc7b6d3 - feat(core): initialize core layer with exception hierarchy
 
 ## 🚀 框架已就绪！
 
-**AutoTestMe-NG 框架开发完成，所有 4 个方向已执行！**
+**WeiTest 框架开发完成，所有 4 个方向已执行！**
 
 ### 下一步
 
@@ -298,4 +298,4 @@ cc7b6d3 - feat(core): initialize core layer with exception hierarchy
 
 ---
 
-**🎉 AutoTestMe-NG 框架全部开发完成！**
+**🎉 WeiTest 框架全部开发完成！**

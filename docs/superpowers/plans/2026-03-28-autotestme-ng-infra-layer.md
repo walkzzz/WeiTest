@@ -1,4 +1,4 @@
-# AutoTestMe-NG Infra Layer Implementation Plan
+# WeiTest Infra Layer Implementation Plan
 
 > **Goal:** 实现基础设施层，包括 CI/CD、配置管理、报告系统和日志系统。
 

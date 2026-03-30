@@ -155,8 +155,8 @@ weitest/
 
 ```python
 # 之前的代码
-from autotestme_ng.engine import Page
-from autotestme_ng.core import ApplicationDriver
+from wei_test.engine import Page
+from wei_test.core import ApplicationDriver
 
 # 现在的代码
 from wei.engine import Page
