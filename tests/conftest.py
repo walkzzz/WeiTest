@@ -88,9 +88,9 @@ def pytest_sessionfinish(session, exitstatus):
     print(f"  测试执行完成")
     print(f"  退出码：{exitstatus}")
     if exitstatus == 0:
-        print(f"  状态：✅ 全部通过")
+        print(f"  状态：[PASS] 全部通过")
     else:
-        print(f"  状态：⚠️  部分失败")
+        print(f"  状态：[WARN] 部分失败")
     print(f"{'=' * 60}\n")
 
 
