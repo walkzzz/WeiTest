@@ -2,7 +2,7 @@
 
 ## 概述
 
-AutoTestMe-NG v2.0 引入了强大的插件系统，支持:
+WeiTest v2.0 引入了强大的插件系统，支持:
 - ✅ 运行时动态注册组件
 - ✅ 自定义定位策略
 - ✅ 自定义断言类型
@@ -407,8 +407,8 @@ def version(self) -> str:
 # 在文档中说明版本兼容性
 """
 兼容性:
-- v1.x: AutoTestMe-NG v2.0+
-- v2.x: AutoTestMe-NG v3.0+ (计划中)
+- v1.x: WeiTest v2.0+
+- v2.x: WeiTest v3.0+ (计划中)
 """
 ```
 

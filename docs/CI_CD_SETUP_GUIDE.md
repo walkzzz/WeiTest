@@ -1,6 +1,6 @@
-# AutoTestMe-NG CI/CD 配置指南
+# WeiTest CI/CD 配置指南
 
-本文档详细说明如何配置 Jenkins 和 GitHub Actions 用于 AutoTestMe-NG 自动化测试。
+本文档详细说明如何配置 Jenkins 和 GitHub Actions 用于 WeiTest 自动化测试。
 
 ---
 
@@ -43,7 +43,7 @@
 
 ```
 1. 点击 "新建任务" (New Item)
-2. 输入任务名称：AutoTestMe-NG
+2. 输入任务名称：WeiTest
 3. 选择 "Pipeline" 类型
 4. 点击 "确定"
 ```
@@ -53,8 +53,8 @@
 ```
 1. 选择 "Git"
 2. Repository URL: 
-   - GitHub: https://github.com/your-org/autotestme-ng.git
-   - 本地 Git: file:///D:/Work/Trae/autotestme-ng
+   - GitHub: https://github.com/your-org/weitest.git
+   - 本地 Git: file:///D:/Work/Trae/weitest
 3. Branch: */master (或 main)
 4. Credentials: 添加 Git 凭据（如需要）
 ```
@@ -109,7 +109,7 @@ SMTP 服务器：smtp.your-company.com
 
 ### 1.4 Windows Agent 配置
 
-由于 AutoTestMe-NG 是 Windows UI 自动化框架，需要配置 Windows 节点：
+由于 WeiTest 是 Windows UI 自动化框架，需要配置 Windows 节点：
 
 #### 创建 Windows Agent
 
@@ -171,7 +171,7 @@ pipeline {
     
     environment {
         PYTHON_VERSION = '3.9'
-        PROJECT_NAME = 'AutoTestMe-NG'
+        PROJECT_NAME = 'WeiTest'
         REPORT_DIR = 'reports'
         ALLURE_RESULTS = 'reports/allure-results'
         LOG_DIR = 'logs'
@@ -350,16 +350,16 @@ pipeline {
 ```bash
 # GitHub 上创建新仓库
 # 访问：https://github.com/new
-# 仓库名：autotestme-ng
+# 仓库名：weitest
 ```
 
 #### 步骤 2: 添加远程仓库
 
 ```bash
-cd D:\Work\Trae\autotestme-ng
+cd D:\Work\Trae\weitest
 
 # 添加远程仓库
-git remote add origin https://github.com/YOUR_USERNAME/autotestme-ng.git
+git remote add origin https://github.com/YOUR_USERNAME/weitest.git
 
 # 验证
 git remote -v
@@ -390,7 +390,7 @@ git push -u origin main
 推送后，GitHub Actions 会自动触发：
 
 ```
-1. 访问：https://github.com/YOUR_USERNAME/autotestme-ng/actions
+1. 访问：https://github.com/YOUR_USERNAME/weitest/actions
 2. 查看工作流运行状态
 3. 查看测试报告和覆盖率
 ```
@@ -400,7 +400,7 @@ git push -u origin main
 编辑 `.github/workflows/ci.yml` 自定义：
 
 ```yaml
-name: AutoTestMe-NG CI
+name: WeiTest CI
 
 on:
   push:
@@ -436,7 +436,7 @@ jobs:
 .\infra\ci\deploy.ps1
 
 # 指定部署路径
-.\infra\ci\deploy.ps1 -DeployPath "C:\AutoTestMe-NG"
+.\infra\ci\deploy.ps1 -DeployPath "C:\WeiTest"
 
 # 指定环境
 .\infra\ci\deploy.ps1 -Environment "production"
@@ -449,7 +449,7 @@ jobs:
 
 | 参数 | 说明 | 默认值 |
 |------|------|--------|
-| DeployPath | 部署路径 | C:\AutoTestMe-NG |
+| DeployPath | 部署路径 | C:\WeiTest |
 | Version | 版本号 | 1.0.0 |
 | Environment | 环境 (test/production) | test |
 
@@ -523,7 +523,7 @@ jobs:
 
 | 组件 | 日志位置 |
 |------|----------|
-| Jenkins | JENKINS_HOME/jobs/AutoTestMe-NG/builds/*/log |
+| Jenkins | JENKINS_HOME/jobs/WeiTest/builds/*/log |
 | GitHub Actions | GitHub → Actions → 工作流运行 → 查看日志 |
 | 测试日志 | logs/*.log |
 | 测试报告 | reports/*.html |

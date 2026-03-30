@@ -1,4 +1,4 @@
-# AutoTestMe-NG 使用案例 (Usage Cases)
+# WeiTest 使用案例 (Usage Cases)
 
 **最后更新**: 2026-03-28  
 **版本**: v1.0
@@ -87,9 +87,9 @@ elements:
 """财务模块测试"""
 
 import pytest
-from engine.page.yaml_page import YamlPage
-from engine.component import TextInput, Button, Table
-from engine.assertion import Assert
+from wei.engine.page.yaml_page import YamlPage
+from wei.engine.component import TextInput, Button, Table
+from wei.engine.assertion import Assert
 
 
 class TestFinanceModule:
@@ -180,10 +180,10 @@ production:
 """交易功能测试"""
 
 import pytest
-from engine.page.yaml_page import YamlPage
-from engine.component import TextInput, Button
-from engine.assertion import Assert
-from infra.config import ConfigManager
+from wei.engine.page.yaml_page import YamlPage
+from wei.engine.component import TextInput, Button
+from wei.engine.assertion import Assert
+from wei.infra.config import ConfigManager
 
 
 class TestTrading:
@@ -254,9 +254,9 @@ class TestTrading:
 ```python
 """用户权限测试"""
 
-from engine.page.yaml_page import YamlPage
-from engine.component import Button, TextInput
-from engine.assertion import Assert
+from wei.engine.page.yaml_page import YamlPage
+from wei.engine.component import Button, TextInput
+from wei.engine.assertion import Assert
 
 
 class TestUserPermissions:

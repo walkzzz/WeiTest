@@ -1,4 +1,4 @@
-# AutoTestMe-NG 文档索引
+# WeiTest 文档索引
 
 **框架版本**: v1.0  
 **最后更新**: 2026-03-28
@@ -41,7 +41,7 @@
 
 | 文档 | 说明 | 适合人群 |
 |------|------|---------|
-| [superpowers/specs/2026-03-28-autotestme-ng-design.md](superpowers/specs/2026-03-28-autotestme-ng-design.md) | 框架设计文档 | 架构师 |
+| [superpowers/specs/2026-03-28-weitest-design.md](superpowers/specs/2026-03-28-weitest-design.md) | 框架设计文档 | 架构师 |
 | [superpowers/plans/](superpowers/plans/) | 实施计划 | 开发者 |
 
 ---

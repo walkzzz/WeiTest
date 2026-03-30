@@ -1,6 +1,6 @@
 # 组件使用示例大全
 
-本文档提供 AutoTestMe-NG 所有 UI 组件的完整使用示例。
+本文档提供 WeiTest 所有 UI 组件的完整使用示例。
 
 ---
 
@@ -18,8 +18,8 @@
 ### 1.1 Button - 按钮
 
 ```python
-from engine.component import Button
-from core.finder.locator import ByID
+from wei.engine.component import Button
+from wei.core.finder.locator import ByID
 
 # 创建按钮组件
 btn = Button(page, ByID("btn_login"))
@@ -45,7 +45,7 @@ btn.wait_clickable().click()
 ### 1.2 TextInput - 输入框
 
 ```python
-from engine.component import TextInput
+from wei.engine.component import TextInput
 
 # 创建输入框组件
 input_box = TextInput(page, ByID("txt_username"))
@@ -74,7 +74,7 @@ input_box.paste("text")             # 粘贴
 ### 1.3 CheckBox - 复选框
 
 ```python
-from engine.component import CheckBox
+from wei.engine.component import CheckBox
 
 # 创建复选框组件
 chk = CheckBox(page, ByID("chk_remember"))
@@ -100,7 +100,7 @@ if not chk.is_checked():
 ### 1.4 Label - 标签
 
 ```python
-from engine.component import Label
+from wei.engine.component import Label
 
 # 创建标签组件
 label = Label(page, ByID("lbl_title"))
@@ -114,7 +114,7 @@ label.is_visible()
 label.is_enabled()
 
 # 验证文本
-from engine.assertion import Assert
+from wei.engine.assertion import Assert
 Assert.that(label.text).contains("欢迎")
 ```
 
@@ -125,7 +125,7 @@ Assert.that(label.text).contains("欢迎")
 ### 2.1 ComboBox - 下拉框
 
 ```python
-from engine.component import ComboBox
+from wei.engine.component import ComboBox
 
 # 创建下拉框组件
 combo = ComboBox(page, ByID("combo_city"))
@@ -155,7 +155,7 @@ for option in combo.options:
 ### 2.2 RadioButton - 单选按钮
 
 ```python
-from engine.component import RadioButton
+from wei.engine.component import RadioButton
 
 # 创建单选按钮组件
 radio = RadioButton(page, ByID("radio_male"))
@@ -183,7 +183,7 @@ male.select()  # 选择男性
 ### 2.3 ListBox - 列表框
 
 ```python
-from engine.component import ListBox
+from wei.engine.component import ListBox
 
 # 创建列表框组件
 listbox = ListBox(page, ByID("list_items"))
@@ -212,7 +212,7 @@ for item in listbox.items:
 ### 2.4 TabControl - 选项卡
 
 ```python
-from engine.component import TabControl
+from wei.engine.component import TabControl
 
 # 创建选项卡组件
 tab = TabControl(page, ByID("tab_main"))
@@ -246,7 +246,7 @@ if tab.tab_exists("设置"):
 ### 3.1 TreeView - 树形视图
 
 ```python
-from engine.component import TreeView
+from wei.engine.component import TreeView
 
 # 创建树形视图组件
 tree = TreeView(page, ByID("tree_files"))
@@ -276,7 +276,7 @@ for node in tree.get_all_nodes():
 ### 3.2 Menu - 菜单
 
 ```python
-from engine.component import Menu
+from wei.engine.component import Menu
 
 # 创建菜单组件
 menu = Menu(page, ByName("应用程序菜单"))
@@ -304,7 +304,7 @@ menu.select_menu_item("编辑", "复制", "全部")
 ### 3.3 DataGrid - 数据表格
 
 ```python
-from engine.component import DataGrid
+from wei.engine.component import DataGrid
 
 # 创建数据表格组件
 grid = DataGrid(page, ByID("grid_users"))
@@ -345,7 +345,7 @@ if index >= 0:
 ### 3.4 Table - 表格
 
 ```python
-from engine.component import Table
+from wei.engine.component import Table
 
 # 创建表格组件
 table = Table(page, ByID("table_data"))
@@ -375,7 +375,7 @@ for i in range(table.row_count()):
 ### 3.1 ProgressBar - 进度条
 
 ```python
-from engine.component import ProgressBar
+from wei.engine.component import ProgressBar
 
 # 创建进度条组件
 progress = ProgressBar(page, ByID("progress_download"))
@@ -405,8 +405,8 @@ if progress.is_complete():
 #### 示例 1: 登录流程
 
 ```python
-from engine.component import Button, TextInput, CheckBox
-from engine.assertion import Assert
+from wei.engine.component import Button, TextInput, CheckBox
+from wei.engine.assertion import Assert
 
 # 页面对象
 class LoginPage:
@@ -442,7 +442,7 @@ login_page.login("admin", "password123", remember=True)
 #### 示例 2: 数据录入流程
 
 ```python
-from engine.component import (
+from wei.engine.component import (
     TextInput, ComboBox, DatePicker,
     Button, DataGrid, Label
 )
@@ -480,7 +480,7 @@ entry_page.add_employee("张三", "技术部", "工程师")
 #### 示例 3: 文件管理流程
 
 ```python
-from engine.component import TreeView, Menu, Button
+from wei.engine.component import TreeView, Menu, Button
 
 class FileManagerPage:
     def __init__(self, page):
@@ -517,7 +517,7 @@ file_page.create_file("文档", "新文档.txt")
 ### 5.1 基础断言
 
 ```python
-from engine.assertion import Assert
+from wei.engine.assertion import Assert
 
 # 基本断言
 Assert.that(value).is_not_none()
@@ -534,7 +534,7 @@ Assert.that(number).equals(100)
 ### 5.2 UI 断言
 
 ```python
-from engine.assertion import Assert
+from wei.engine.assertion import Assert
 
 # 元素存在性
 Assert.ui(page, ByID("btn_login")).should_exist()
@@ -584,14 +584,14 @@ btn.wait_clickable(timeout=10)  # 等待可点击
 btn.click()
 
 # 推荐：使用显式等待
-from core.waiter import WaitCondition
+from wei.core.waiter import WaitCondition
 page.wait_element(locator, "visible", timeout=5)
 ```
 
 ### 6.3 错误处理
 
 ```python
-from core.exceptions import ElementNotFoundError
+from wei.core.exceptions import ElementNotFoundError
 
 try:
     btn = Button(page, ByID("btn_not_exist"))

@@ -1,4 +1,4 @@
-# AutoTestMe-NG 使用指南
+# WeiTest 使用指南
 
 ## 目录
 

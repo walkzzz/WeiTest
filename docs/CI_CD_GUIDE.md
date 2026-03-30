@@ -1,6 +1,6 @@
 # CI/CD 配置指南
 
-本指南介绍如何配置和使用 AutoTestMe-NG 的 CI/CD 管道。
+本指南介绍如何配置和使用 WeiTest 的 CI/CD 管道。
 
 ---
 
@@ -137,7 +137,7 @@ pytest tests/ --cov=core --cov=engine --cov=infra --cov-report=term-missing
 
 ```bash
 # 创建版本标签
-git tag -a v2.0.0 -m "AutoTestMe-NG v2.0.0"
+git tag -a v2.0.0 -m "WeiTest v2.0.0"
 
 # 推送标签
 git push origin --tags

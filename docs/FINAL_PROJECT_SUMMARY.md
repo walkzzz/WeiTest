@@ -1,4 +1,4 @@
-# AutoTestMe-NG v2.0 项目最终总结报告
+# WeiTest v2.0 项目最终总结报告
 
 **项目完成日期**: 2026-03-30  
 **最终版本**: v2.0.1  
@@ -232,7 +232,7 @@
 86b2b91 docs: Complete documentation
 451b6c8 docs: Add quickstart
 3c68122 docs: Add release notes
-ccff4a4 feat(v2.0): AutoTestMe-NG v2.0 Complete Release
+ccff4a4 feat(v2.0): WeiTest v2.0 Complete Release
 ```
 
 **总提交数**: 8 个  
@@ -280,7 +280,7 @@ ccff4a4 feat(v2.0): AutoTestMe-NG v2.0 Complete Release
 
 ```bash
 # 1. 安装依赖
-cd E:\Huawei\autotestme-ng-v2.0
+cd E:\Huawei\weitest-v2.0
 pip install -r requirements.txt
 
 # 2. 运行测试
@@ -493,7 +493,7 @@ pytest tests/test_login.py -v
 
 ### 项目资源
 
-- **代码仓库**: `E:\Huawei\autotestme-ng-v2.0`
+- **代码仓库**: `E:\Huawei\weitest-v2.0`
 - **文档目录**: `docs/`
 - **测试报告**: `docs/TEST_REPORT_20260328.md`
 - **优化总结**: `docs/OPTIMIZATION_SUMMARY.md`
@@ -530,4 +530,4 @@ cat docs/OPTIMIZATION_SUMMARY.md
 
 ---
 
-**🎉 AutoTestMe-NG v2.0 项目圆满完成！**
+**🎉 WeiTest v2.0 项目圆满完成！**
