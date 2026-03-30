@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING, Optional
 
 if TYPE_CHECKING:
     from core.finder.locator import Locator
-    from wei.engine.page.base_page import BasePage
+    from engine.page.base_page import BasePage
 
 
 class Menu:

@@ -151,7 +151,7 @@ def cmd_create_page(args):
     py_file = pages_dir / f"{page_name}_page.py"
     py_content = f'''"""{page_name} 页面对象"""
 
-from wei.engine.page.base_page import BasePage
+from engine.page.base_page import BasePage
 
 
 class {page_name.capitalize()}Page(BasePage):

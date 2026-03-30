@@ -2,8 +2,8 @@
 
 import pytest
 from unittest.mock import Mock
-from wei.engine.assertion.ui_assert import UIAssertion
-from wei.engine.assertion.assertion_chain import AssertionChain, Assert
+from engine.assertion.ui_assert import UIAssertion
+from engine.assertion.assertion_chain import AssertionChain, Assert
 
 
 class TestAssertionChain:

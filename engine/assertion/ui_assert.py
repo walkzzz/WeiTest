@@ -2,7 +2,7 @@
 
 from typing import TYPE_CHECKING
 
-from wei.core.finder.locator import Locator
+from core.finder.locator import Locator
 
 if TYPE_CHECKING:
     from engine.page.base_page import BasePage
@@ -35,8 +35,8 @@ class UIAssertion:
 
     def should_exist(self, timeout: int = 0) -> "UIAssertion":
         """断言元素存在"""
-        from wei.core.waiter.smart_wait import SmartWait
-        from wei.core.waiter.wait_condition import ExistsCondition
+        from core.waiter.smart_wait import SmartWait
+        from core.waiter.wait_condition import ExistsCondition
 
         passed = SmartWait(timeout).wait_for_condition(ExistsCondition(), self._get_element())
         if not passed:
@@ -57,8 +57,8 @@ class UIAssertion:
 
     def should_be_visible(self, timeout: int = 10) -> "UIAssertion":
         """断言元素可见"""
-        from wei.core.waiter.smart_wait import SmartWait
-        from wei.core.waiter.wait_condition import VisibleCondition
+        from core.waiter.smart_wait import SmartWait
+        from core.waiter.wait_condition import VisibleCondition
 
         passed = SmartWait(timeout).wait_for_condition(VisibleCondition(), self._get_element())
         if not passed:

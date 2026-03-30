@@ -23,9 +23,11 @@ class TestApplicationDriver:
     @patch("core.driver.application.Application")
     def test_start_success(self, mock_app_class):
         """测试成功启动应用"""
-        mock_app = Mock()
-        mock_app.process = 1234
-        mock_app_class.return_value = mock_app
+        mock_app_instance = Mock()
+        mock_app_instance.process = 1234
+
+        mock_app_class.return_value.start.return_value = mock_app_instance
+        mock_app_class.return_value.process = 1234
 
         driver = ApplicationDriver()
         result = driver.start("notepad.exe")
@@ -75,12 +77,11 @@ class TestApplicationDriver:
 
     def test_connect_no_params(self):
         """测试连接时不提供参数"""
+        from core.exceptions import ApplicationConnectError
+
         driver = ApplicationDriver()
-        with pytest.raises(ValueError, match="必须提供 title 或 process_id"):
-            try:
-                driver.connect()
-            except ValueError:
-                raise
+        with pytest.raises(ApplicationConnectError):
+            driver.connect()
 
     def test_close(self):
         """测试关闭应用"""

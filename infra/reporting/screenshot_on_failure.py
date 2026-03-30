@@ -186,3 +186,9 @@ def take_screenshot(name: str, description: str = "") -> Optional[Path]:
     """
     plugin = ScreenshotPlugin()
     return plugin.screenshot(name, description)
+
+
+# 导出 ScreenshotManager 以便测试导入
+from infra.reporting.screenshot_manager import ScreenshotManager
+
+__all__ = ['ScreenshotManager']

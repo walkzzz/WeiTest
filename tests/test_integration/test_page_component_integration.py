@@ -3,11 +3,11 @@
 import pytest
 from unittest.mock import Mock, MagicMock, patch
 
-from wei.engine.page.yaml_page import YamlPage
-from wei.engine.component.button import Button
-from wei.engine.component.input import TextInput
-from wei.engine.component.checkbox import CheckBox
-from wei.engine.assertion import Assert
+from engine.page.yaml_page import YamlPage
+from engine.component.button import Button
+from engine.component.input import TextInput
+from engine.component.checkbox import CheckBox
+from engine.assertion import Assert
 
 
 @pytest.fixture
@@ -52,7 +52,7 @@ elements:
     description: "测试按钮"
 """
         yaml_file = tmp_path / "test_page.yaml"
-        yaml_file.write_text(yaml_content)
+        yaml_file.write_text(yaml_content, encoding="utf-8")
 
         page = YamlPage.from_yaml(str(yaml_file))
 
@@ -70,7 +70,7 @@ elements:
     description: "记住我"
 """
         yaml_file = tmp_path / "checkbox_page.yaml"
-        yaml_file.write_text(yaml_content)
+        yaml_file.write_text(yaml_content, encoding="utf-8")
 
         page = YamlPage.from_yaml(str(yaml_file))
         locator = page.element("remember_checkbox")
@@ -120,7 +120,7 @@ elements:
     control_type: CheckBox
 """
         yaml_file = tmp_path / "login_page.yaml"
-        yaml_file.write_text(yaml_content)
+        yaml_file.write_text(yaml_content, encoding="utf-8")
 
         # 加载页面
         page = YamlPage.from_yaml(str(yaml_file))
@@ -166,7 +166,7 @@ elements:
     control_type: Button
 """
         yaml_file = tmp_path / "tabs_page.yaml"
-        yaml_file.write_text(yaml_content)
+        yaml_file.write_text(yaml_content, encoding="utf-8")
 
         page = YamlPage.from_yaml(str(yaml_file))
 
@@ -175,7 +175,7 @@ elements:
         assert page.has_element("tab_settings")
 
         # 创建工作流
-        from wei.engine.component.tab_control import TabControl
+        from engine.component.tab_control import TabControl
 
         tab_control = TabControl(page, page.element("tab_home"))
         assert tab_control is not None

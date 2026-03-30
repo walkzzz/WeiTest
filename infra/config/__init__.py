@@ -1,9 +1,9 @@
 """Config module - configuration management"""
 
-from wei.infra.config.config_manager import ConfigManager
-from wei.infra.config.enhanced_config import EnhancedConfigManager, load_config, load_config_with_env
-from wei.infra.config.config_validator import ConfigValidator
-from wei.infra.config.config_encryption import ConfigEncryption
+from infra.config.config_manager import ConfigManager
+from infra.config.enhanced_config import EnhancedConfigManager, load_config, load_config_with_env
+from infra.config.config_validator import ConfigValidator
+from infra.config.config_encryption import ConfigEncryption
 
 __all__ = [
     "ConfigManager",

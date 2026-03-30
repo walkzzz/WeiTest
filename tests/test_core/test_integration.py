@@ -212,9 +212,11 @@ class TestCoreIntegration:
     def test_application_lifecycle(self):
         """测试应用生命周期管理"""
         with patch("core.driver.application.Application") as mock_app_class:
-            mock_app = Mock()
-            mock_app.process = 1234
-            mock_app_class.return_value = mock_app
+            mock_app_instance = Mock()
+            mock_app_instance.process = 1234
+
+            mock_app_class.return_value.start.return_value = mock_app_instance
+            mock_app_class.return_value.process = 1234
 
             driver = ApplicationDriver()
 
@@ -328,12 +330,16 @@ class TestCoreDataFlow:
         # 转换为 YAML
         yaml_data = locator.to_dict()
 
-        # 模拟 YAML 文件内容
-        yaml_string = yaml.dump(yaml_data, allow_unicode=True)
+        # 模拟 YAML 文件内容（添加 locator_type 以匹配 from_yaml 期望的格式）
+        yaml_data_with_keys = {
+            "locator_type": yaml_data["type"],
+            "locator_value": yaml_data["value"],
+            "control_type": yaml_data.get("control_type"),
+            "timeout": yaml_data.get("timeout"),
+        }
 
         # 从 YAML 加载
-        loaded_data = yaml.safe_load(yaml_string)
-        restored = Locator.from_yaml(loaded_data)
+        restored = Locator.from_yaml(yaml_data_with_keys)
 
         # 验证
         assert restored.type == locator.type

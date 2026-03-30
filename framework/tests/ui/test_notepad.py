@@ -4,8 +4,8 @@ import pytest
 from engine.page.yaml_page import YamlPage
 from engine.component import Button, TextInput, Label
 from engine.assertion import Assert
-from wei.infra.logging import Logger, get_logger
-from wei.infra.config import ConfigManager
+from infra.logging import Logger, get_logger
+from infra.config import ConfigManager
 
 
 class TestNotepad:

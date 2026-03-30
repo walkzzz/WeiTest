@@ -305,6 +305,11 @@ class PluginManager:
         # 上下文
         self._context = PluginContext()
 
+    @property
+    def plugins(self) -> Dict[str, Plugin]:
+        """获取已注册的插件字典"""
+        return self._plugins
+
     def register_plugin(self, plugin: Plugin) -> None:
         """
         注册插件

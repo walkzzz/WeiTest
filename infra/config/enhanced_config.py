@@ -6,8 +6,8 @@ import yaml
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-from wei.infra.config.config_validator import ConfigValidator
-from wei.infra.config.config_encryption import ConfigEncryption
+from infra.config.config_validator import ConfigValidator
+from infra.config.config_encryption import ConfigEncryption
 
 
 class EnhancedConfigManager:

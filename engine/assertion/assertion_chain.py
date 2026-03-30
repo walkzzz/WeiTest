@@ -56,6 +56,48 @@ class AssertionChain:
             raise AssertionError(f"{self.description} 应为 False")
         return self
 
+    def starts_with(self, prefix: str) -> "AssertionChain":
+        """断言字符串以指定前缀开头"""
+        if not isinstance(self.actual, str):
+            raise AssertionError(f"{self.description} 应为字符串类型")
+        if not self.actual.startswith(prefix):
+            raise AssertionError(f"{self.description} 应以 '{prefix}' 开头，实际：'{self.actual}'")
+        return self
+
+    def ends_with(self, suffix: str) -> "AssertionChain":
+        """断言字符串以指定后缀结尾"""
+        if not isinstance(self.actual, str):
+            raise AssertionError(f"{self.description} 应为字符串类型")
+        if not self.actual.endswith(suffix):
+            raise AssertionError(f"{self.description} 应以 '{suffix}' 结尾，实际：'{self.actual}'")
+        return self
+
+    def length_greater_than(self, length: int) -> "AssertionChain":
+        """断言长度大于指定值"""
+        actual_length = len(self.actual)
+        if actual_length <= length:
+            raise AssertionError(f"{self.description} 长度应大于 {length}，实际：{actual_length}")
+        return self
+
+    def length_less_than(self, length: int) -> "AssertionChain":
+        """断言长度小于指定值"""
+        actual_length = len(self.actual)
+        if actual_length >= length:
+            raise AssertionError(f"{self.description} 长度应小于 {length}，实际：{actual_length}")
+        return self
+
+    def matches(self, pattern: Any) -> "AssertionChain":
+        """断言匹配正则表达式"""
+        import re
+
+        if not isinstance(self.actual, str):
+            raise AssertionError(f"{self.description} 应为字符串类型")
+        if not re.search(pattern, self.actual):
+            raise AssertionError(
+                f"{self.description} 应匹配模式 '{pattern}'，实际：'{self.actual}'"
+            )
+        return self
+
 
 # ========== Fluent API Entry Point ==========
 

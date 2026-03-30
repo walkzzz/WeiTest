@@ -4,7 +4,7 @@ import pytest
 from engine.page.yaml_page import YamlPage
 from engine.component import Button, Label
 from engine.assertion import Assert
-from wei.infra.logging import get_logger
+from infra.logging import get_logger
 
 
 class TestCalculator:
